@@ -30,7 +30,11 @@ namespace MandelbrotSet
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            this.IsMouseVisible = true;
+            graphics.PreferredBackBufferWidth = 300;
+            graphics.PreferredBackBufferHeight = 300;
+            graphics.ApplyChanges();
+            
             renderer.Initialize(graphics);
             base.Initialize();
         }
@@ -77,7 +81,7 @@ namespace MandelbrotSet
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             renderer.Draw(spriteBatch);
 
