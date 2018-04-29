@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace MandelbrotSet
 {
@@ -19,6 +20,8 @@ namespace MandelbrotSet
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 24d);
+
             renderer = new MandelbrotSetRenderer();
         }
 
@@ -31,8 +34,8 @@ namespace MandelbrotSet
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
-            graphics.PreferredBackBufferWidth = 300;
-            graphics.PreferredBackBufferHeight = 300;
+            graphics.PreferredBackBufferWidth = 450;
+            graphics.PreferredBackBufferHeight = 450;
             graphics.ApplyChanges();
             
             renderer.Initialize(graphics);
